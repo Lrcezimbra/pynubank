@@ -6,6 +6,15 @@ import requests
 
 from pynubank import utils
 
+PAYMENT_EVENT_TYPES = (
+    'TransferOutEvent',
+    'TransferInEvent',
+    'TransferOutReversalEvent',
+    'BarcodePaymentEvent',
+    'DebitPurchaseEvent',
+    'DebitPurchaseReversalEvent',
+)
+
 
 class NuException(BaseException):
     pass
