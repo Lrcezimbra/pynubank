@@ -135,7 +135,7 @@ class Nubank:
 
     def get_account_statements(self):
         feed = self.get_account_feed()
-        return list(filter(lambda x: x['__typename'] in ('TransferOutEvent', 'TransferInEvent', 'TransferOutReversalEvent', 'BarcodePaymentEvent'), feed))
+        return list(filter(lambda x: x['__typename'] in PAYMENT_EVENT_TYPES, feed))
 
     def get_account_balance(self):
         data = self._make_graphql_request('account_balance')
